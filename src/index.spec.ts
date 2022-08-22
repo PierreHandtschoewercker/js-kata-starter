@@ -1,30 +1,128 @@
 // @ts-ignore see https://github.com/jest-community/jest-extended#setup
-import resolveFizzBuzz from ".";
+import resolveFraction, { Fraction } from ".";
 
-test("Le premier nombre est 1", () => {
-  expect(resolveFizzBuzz(1)).toBe("1");
+test("test fraction Addition on same denominator(1)", () => {
+  const fraction1: Fraction = {
+    numerator: 1,
+    denominator: 1,
+  };
+  const fraction2: Fraction = {
+    numerator: 1,
+    denominator: 1,
+  };
+
+  const resultat: Fraction = {
+    numerator: 2,
+    denominator: 1,
+  };
+
+  expect(resolveFraction(fraction1, fraction2)).toEqual(resultat);
 });
 
-test("Le deuxième nombre est 2", () => {
-  expect(resolveFizzBuzz(2)).toBe("2");
+test("test fraction Addition on same denominator (1)", () => {
+  const fraction1: Fraction = {
+    numerator: 3,
+    denominator: 1,
+  };
+  const fraction2: Fraction = {
+    numerator: 4,
+    denominator: 1,
+  };
+
+  const resultat: Fraction = {
+    numerator: 7,
+    denominator: 1,
+  };
+
+  expect(resolveFraction(fraction1, fraction2)).toEqual(resultat);
 });
 
-test("Le nombre est multiple de 3, on renvoi Fizz", () => {
-  expect(resolveFizzBuzz(3)).toBe("Fizz");
+test("test fraction Addition on same denominator (1)", () => {
+  const fraction1: Fraction = {
+    numerator: 4,
+    denominator: 1,
+  };
+  const fraction2: Fraction = {
+    numerator: 4,
+    denominator: 1,
+  };
+
+  const resultat: Fraction = {
+    numerator: 8,
+    denominator: 1,
+  };
+
+  expect(resolveFraction(fraction1, fraction2)).toEqual(resultat);
 });
 
-test("Le nombre est multiple de 3, on renvoi Fizz", () => {
-  expect(resolveFizzBuzz(6)).toBe("Fizz");
+test("test fraction Addition on different denominator", () => {
+  const fraction1: Fraction = {
+    numerator: 1,
+    denominator: 3,
+  };
+  const fraction2: Fraction = {
+    numerator: 1,
+    denominator: 2,
+  };
+
+  const resultat: Fraction = {
+    numerator: 5,
+    denominator: 6,
+  };
+
+  expect(resolveFraction(fraction1, fraction2)).toEqual(resultat);
 });
 
-test("Le nombre est multiple de 5, on renvoi Buzz", () => {
-  expect(resolveFizzBuzz(5)).toBe("Buzz");
+test("test fraction Addition on different denominator", () => {
+  const fraction1: Fraction = {
+    numerator: 1,
+    denominator: 3,
+  };
+  const fraction2: Fraction = {
+    numerator: 1,
+    denominator: 3,
+  };
+
+  const resultat: Fraction = {
+    numerator: 2,
+    denominator: 3,
+  };
+
+  expect(resolveFraction(fraction1, fraction2)).toEqual(resultat);
 });
 
-test("Le nombre est multiple de 5, on renvoi Buzz", () => {
-  expect(resolveFizzBuzz(2 * 5)).toBe("Buzz");
+test("test fraction Addition on different denominator", () => {
+  const fraction1: Fraction = {
+    numerator: 2,
+    denominator: 3,
+  };
+  const fraction2: Fraction = {
+    numerator: 2,
+    denominator: 6,
+  };
+
+  const resultat: Fraction = {
+    numerator: 1,
+    denominator: 1,
+  };
+
+  expect(resolveFraction(fraction1, fraction2)).toEqual(resultat);
 });
 
-test("Le nombre est multiple de 5 et de 3, on renvoi FizzBuzz", () => {
-  expect(resolveFizzBuzz(15)).toBe("FizzBuzz");
+test("test fraction Addition on different denominator", () => {
+  const fraction1: Fraction = {
+    numerator: 2,
+    denominator: 5,
+  };
+  const fraction2: Fraction = {
+    numerator: 3,
+    denominator: 4,
+  };
+
+  const resultat: Fraction = {
+    numerator: 23,
+    denominator: 20,
+  };
+
+  expect(resolveFraction(fraction1, fraction2)).toEqual(resultat);
 });
