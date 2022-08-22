@@ -1,12 +1,18 @@
 // @ts-ignore see https://github.com/jest-community/jest-extended#setup
-import * as matchers from "jest-extended";
+import resolveFizzBuzz from ".";
 
-expect.extend(matchers);
-
-test("That's a test!", () => {
-  expect(1 + 1).toEqual(2);
+test("Le premier nombre est 1", () => {
+  expect(resolveFizzBuzz(1)).toBe("1");
 });
 
-test("jest-extended is included", () => {
-  expect([1, 0]).toIncludeSameMembers([0, 1]);
+test("Le deuxième nombre est 2", () => {
+  expect(resolveFizzBuzz(2)).toBe("2");
+});
+
+test("Le nombre est multiple de 3, on renvoi Fizz", () => {
+  expect(resolveFizzBuzz(3)).toBe("Fizz");
+});
+
+test("Le nombre est multiple de 3, on renvoi Fizz", () => {
+  expect(resolveFizzBuzz(6)).toBe("Fizz");
 });
