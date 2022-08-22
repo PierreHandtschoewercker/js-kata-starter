@@ -16,3 +16,15 @@ test("Le nombre est multiple de 3, on renvoi Fizz", () => {
 test("Le nombre est multiple de 3, on renvoi Fizz", () => {
   expect(resolveFizzBuzz(6)).toBe("Fizz");
 });
+
+test("Le nombre est multiple de 5, on renvoi Buzz", () => {
+  expect(resolveFizzBuzz(5)).toBe("Buzz");
+});
+
+test("Le nombre est multiple de 5, on renvoi Buzz", () => {
+  expect(resolveFizzBuzz(2 * 5)).toBe("Buzz");
+});
+
+test("Le nombre est multiple de 5 et de 3, on renvoi FizzBuzz", () => {
+  expect(resolveFizzBuzz(15)).toBe("FizzBuzz");
+});
